@@ -51,9 +51,9 @@ const Footer = () => {
       </div>
       <div className="text-center text-sm text-[#4D4D4D] pt-6">
         Copyright © 2024 GHB EMEA Ltd. All rights reserved. | 
-        <a href="#" className="hover:underline"> Privacy Policy</a> | 
-        <a href="#" className="hover:underline"> Terms of Service</a> | 
-        <a href="#" className="hover:underline"> Cookie Policy</a>
+        <a href="/privacy-policy" className="hover:underline"> Privacy Policy</a> | 
+        <a href="/terms-of-service" className="hover:underline"> Terms of Service</a> | 
+        <a href="/cookie-policy" className="hover:underline"> Cookie Policy</a>
       </div>
     </footer>
   );
