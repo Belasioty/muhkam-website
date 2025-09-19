@@ -70,13 +70,6 @@ export const Navigation: React.FC = () => {
         )}
       </div>
 
-      {/* Back to GHB Link */}
-      <Link 
-        to="/" 
-        className="flex items-center gap-2 text-[#0A5180] hover:text-[#084066] transition-colors text-lg font-medium"
-      >
-        GHB EMEA
-      </Link>
     </nav>
   );
 };
