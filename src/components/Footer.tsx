@@ -45,9 +45,7 @@ const Footer = () => {
           />
         </div>
         <nav className="flex gap-8">
-          <a href="/" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">Home</a>
           <a href="/#about" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">About Us</a>
-          <a href="/#services" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">Services</a>
           <a href="/#contact" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">Contact Us</a>
         </nav>
       </div>
