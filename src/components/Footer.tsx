@@ -45,7 +45,7 @@ const Footer = () => {
           />
         </div>
         <nav className="flex gap-8">
-          <a href="/#about" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">About Us</a>
+          <a href="https://ghb-emea.com/" target="_blank" rel="noopener noreferrer" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">About Us</a>
           <a href="/#contact" className="text-base text-[#333] hover:text-[#0A5180] transition-colors">Contact Us</a>
         </nav>
       </div>
