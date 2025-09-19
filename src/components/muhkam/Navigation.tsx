@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import audaiLogo from '../../assets/audai-logo-new.png';
 
 export const Navigation: React.FC = () => {
+  const location = useLocation();
+  const isMainPage = location.pathname === '/';
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,36 +27,47 @@ export const Navigation: React.FC = () => {
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-8">
-        <button 
-          onClick={() => scrollToSection('overview')}
-          className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
-        >
-          Overview
-        </button>
-        <button 
-          onClick={() => scrollToSection('why-audai')}
-          className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
-        >
-          Why Muhkam
-        </button>
-        <button 
-          onClick={() => scrollToSection('how-it-works')}
-          className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
-        >
-          How It Works
-        </button>
-        <button 
-          onClick={() => scrollToSection('use-cases')}
-          className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
-        >
-          Use Cases
-        </button>
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
-        >
-          Contact Us
-        </button>
+        {isMainPage ? (
+          <>
+            <button 
+              onClick={() => scrollToSection('overview')}
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+            >
+              Overview
+            </button>
+            <button 
+              onClick={() => scrollToSection('why-audai')}
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+            >
+              Why Muhkam
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-it-works')}
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+            >
+              How It Works
+            </button>
+            <button 
+              onClick={() => scrollToSection('use-cases')}
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+            >
+              Use Cases
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+            >
+              Contact Us
+            </button>
+          </>
+        ) : (
+          <Link 
+            to="/" 
+            className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+          >
+            ← Back to Home
+          </Link>
+        )}
       </div>
 
       {/* Back to GHB Link */}
