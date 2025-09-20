@@ -36,7 +36,7 @@ export const HowItWorksSection: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="bg-white relative flex w-full flex-col overflow-hidden py-24 max-md:max-w-full">
+    <section id="how-it-works" className="bg-background relative flex w-full flex-col overflow-hidden py-24 max-md:max-w-full">
       <div className="self-center z-0 w-[1280px] max-w-full text-center px-8 max-md:px-5">
         <div className="flex w-full flex-col items-center max-md:max-w-full">
           <div className="w-[768px] max-w-full">

@@ -2,7 +2,7 @@ import React from 'react';
 
 export const UseCasesSection: React.FC = () => {
   return (
-    <section id="use-cases" className="bg-white self-center relative flex max-w-full w-[1440px] flex-col overflow-hidden items-center py-24">
+    <section id="use-cases" className="bg-background self-center relative flex max-w-full w-[1440px] flex-col overflow-hidden items-center py-24">
       <img
         src="https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/27aa7a6c86c17f7de521d3919fc379d43b210258?placeholderIfAbsent=true"
         className="aspect-[1] object-contain w-[450px] absolute z-0 max-w-full h-[450px] right-10 top-1/2 transform -translate-y-1/2"

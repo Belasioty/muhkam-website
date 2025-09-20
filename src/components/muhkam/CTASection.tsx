@@ -15,7 +15,7 @@ export const CTASection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="bg-white flex w-full flex-col overflow-hidden items-center justify-center py-24 max-md:max-w-full">
+    <section id="contact" className="bg-background flex w-full flex-col overflow-hidden items-center justify-center py-24 max-md:max-w-full">
       <div className="min-h-[356px] w-[1280px] max-w-full px-8 max-md:px-5">
         <div className="bg-neutral-50 flex w-full overflow-hidden justify-between p-16 rounded-2xl max-md:max-w-full max-md:px-5">
           <div className="min-w-60 w-full flex-1 shrink basis-[0%] px-8 max-md:max-w-full max-md:px-5">

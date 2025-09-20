@@ -2,7 +2,7 @@ import React from 'react';
 
 export const WhyAudaiSection: React.FC = () => {
   return (
-    <section id="why-audai" className="py-20 px-6 bg-white">
+    <section id="why-audai" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
