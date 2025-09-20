@@ -10,19 +10,19 @@ import Footer from '@/components/Footer';
 
 const Muhkam = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-neutral-50">
       <Navigation />
 
       {/* Main content area with top padding for fixed navbar */}
     <main className="px-0.5 pt-20">
-      <div className="bg-white flex w-full flex-col overflow-hidden items-stretch max-md:max-w-full">
+      <div className="bg-neutral-50 flex w-full flex-col overflow-hidden items-stretch max-md:max-w-full">
         <HeroSection />
         
-        <div className="bg-white flex min-h-px w-full max-md:max-w-full" />
+        <div className="bg-neutral-50 flex min-h-px w-full max-md:max-w-full" />
         
         <FeaturesSection />
         
-        <div className="bg-white flex w-full justify-center max-md:max-w-full">
+        <div className="bg-neutral-50 flex w-full justify-center max-md:max-w-full">
             <div className="w-full mx-auto px-8 max-md:px-5">
             <div className="bg-[rgba(233,234,235,1)] flex min-h-px w-full max-md:max-w-full" />
           </div>
@@ -30,7 +30,7 @@ const Muhkam = () => {
         
         <WhyAudaiSection />
         
-        <div className="bg-white flex w-full justify-center max-md:max-w-full">
+        <div className="bg-neutral-50 flex w-full justify-center max-md:max-w-full">
             <div className="w-full mx-auto px-8 max-md:px-5">
             <div className="bg-[rgba(233,234,235,1)] flex min-h-px w-full max-md:max-w-full" />
           </div>
@@ -38,7 +38,7 @@ const Muhkam = () => {
         
         <HowItWorksSection />
         
-        <div className="bg-white flex w-full justify-center max-md:max-w-full">
+        <div className="bg-neutral-50 flex w-full justify-center max-md:max-w-full">
             <div className="w-full mx-auto px-8 max-md:px-5">
             <div className="bg-[rgba(233,234,235,1)] flex min-h-px w-full max-md:max-w-full" />
           </div>
@@ -46,7 +46,7 @@ const Muhkam = () => {
         
         <UseCasesSection />
         
-        <div className="bg-white flex w-full justify-center max-md:max-w-full">
+        <div className="bg-neutral-50 flex w-full justify-center max-md:max-w-full">
           <div className="w-full mx-auto px-8 max-md:px-5">
             <div className="bg-[rgba(233,234,235,1)] flex min-h-px w-full max-md:max-w-full" />
           </div>
