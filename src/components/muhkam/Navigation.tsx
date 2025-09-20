@@ -22,7 +22,7 @@ export const Navigation: React.FC = () => {
           alt="Muhkam logo"
           className="w-[40px] h-[40px] brightness-50 contrast-125"
         />
-        <span className="text-blue-600 text-2xl font-medium tracking-widest">MUHKAM</span>
+        <span className="text-blue-600 text-2xl font-medium">MUHKAM</span>
       </div>
 
       {/* Navigation Links */}
