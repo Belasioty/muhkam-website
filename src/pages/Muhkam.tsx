@@ -10,11 +10,11 @@ import Footer from '@/components/Footer';
 
 const Muhkam = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Navigation />
 
-      {/* Main content area */}
-    <main className="px-0.5">
+      {/* Main content area with top padding for fixed navbar */}
+    <main className="px-0.5 pt-20">
       <div className="bg-white flex w-full flex-col overflow-hidden items-stretch max-md:max-w-full">
         <HeroSection />
         

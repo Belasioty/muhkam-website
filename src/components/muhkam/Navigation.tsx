@@ -14,7 +14,7 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
       {/* Logo and Brand Name */}
       <div className="flex items-center gap-2">
         <img
