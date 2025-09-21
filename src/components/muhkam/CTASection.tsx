@@ -1,17 +1,58 @@
 import React, { useState } from 'react';
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const CTASection: React.FC = () => {
+  const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Contact form submitted:', { email, message });
-    // Reset form
-    setEmail('');
-    setMessage('');
-    alert('Thank you for your interest! We will contact you soon.');
+    setIsSubmitting(true);
+
+    try {
+      const formData = {
+        firstName: 'Quick',
+        lastName: 'Contact',
+        email,
+        subject: 'Contact Request from Homepage',
+        message: message || 'I am interested in learning more about your services.',
+        phone: '',
+        hearAbout: '',
+        interestedIn: '',
+        contactMethod: 'email',
+        contactTime: 'asap'
+      };
+
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      // Reset form
+      setEmail('');
+      setMessage('');
+      
+      toast({
+        title: "Thank you for your interest!",
+        description: "We'll contact you soon.",
+      });
+
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -63,9 +104,10 @@ export const CTASection: React.FC = () => {
                 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-[0_1px_2px_0_rgba(10,13,18,0.05)] border border-[rgba(37,99,235,0.80)] transition-colors duration-200"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-[0_1px_2px_0_rgba(10,13,18,0.05)] border border-[rgba(37,99,235,0.80)] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Contact Us
+                  {isSubmitting ? 'Sending...' : 'Contact Us'}
                 </button>
               </form>
             </div>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -22,10 +26,48 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      // Reset form on success
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        hearAbout: '',
+        interestedIn: '',
+        contactMethod: '',
+        contactTime: ''
+      });
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -209,9 +251,10 @@ const ContactForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="text-[#FDFDFC] text-lg font-medium cursor-pointer bg-[#0A5180] px-6 py-[18px] rounded-lg border-none hover:bg-[#084066] transition-colors"
+            disabled={isSubmitting}
+            className="text-[#FDFDFC] text-lg font-medium cursor-pointer bg-[#0A5180] px-6 py-[18px] rounded-lg border-none hover:bg-[#084066] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send
+            {isSubmitting ? 'Sending...' : 'Send'}
           </button>
         </div>
       </form>
