@@ -48,7 +48,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
             <img 
               src={imageSrc} 
               alt={title}
-              className="relative z-10 w-full h-full min-h-[450px] object-cover rounded-2xl"
+              className="relative z-10 w-full h-[320px] object-cover rounded-2xl"
             />
           </div>
         </div>
