@@ -23,7 +23,7 @@ export const FeaturesSection: React.FC = () => {
           iconSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/ba8b4a22fbbde08183bfcf66efa99d461e4d5244?placeholderIfAbsent=true"
         },
         {
-          text: "Regulator Ready Reports.",
+          text: "Regulator Ready Reports.\n",
           iconSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/ba8b4a22fbbde08183bfcf66efa99d461e4d5244?placeholderIfAbsent=true"
         }
       ],

@@ -42,7 +42,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
           )}
         </div>
         
-        <div className="w-3/5 max-md:w-full max-md:max-w-full">
+        <div className="w-3/5 max-md:w-full max-md:max-w-full mt-4">
           {imageSrc.endsWith('.mp4') ? (
             <video
               src={imageSrc}
