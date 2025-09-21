@@ -139,7 +139,7 @@ export const FeaturesSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300 mt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
         <video
           src={animatedArrowVideo}
