@@ -23,11 +23,12 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="font-medium text-foreground mb-4">Company</h4>
+            <h4 className="font-medium text-foreground mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">About</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</a></li>
+              <li><a href="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Use</a></li>
+              <li><a href="/data-protection" className="text-muted-foreground hover:text-foreground transition-colors">Data Protection</a></li>
+              <li><a href="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
