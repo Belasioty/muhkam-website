@@ -133,7 +133,7 @@ export const FeaturesSection: React.FC = () => {
             <div className="text-[#333333] text-xl font-normal leading-[30px] mt-5 max-md:max-w-full">
               "In governance, compliance, and audit, an answer alone is never enough. What matters is the context — how that answer relates to policies, risks, and systems. That's what{" "}
               <span style={{ fontWeight: 700, color: "rgba(37,99,235,1)" }}>
-                Muhkam
+                Muhkam AI
               </span>{" "}
               Models generate and visualize"
             </div>
