@@ -1,6 +1,7 @@
 import React from 'react';
 import { FeatureCard } from './FeatureCard';
 import grcUniverseImage from '@/assets/grc-universe-interface.png';
+import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -135,10 +136,13 @@ export const FeaturesSection: React.FC = () => {
       
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
-        <img
-          src="https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/48fa52a493ac4a98d2802c00b947739a6ac81f59?placeholderIfAbsent=true"
+        <video
+          src={animatedArrowVideo}
           className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
-          alt="Muhkam Platform Dashboard"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
       
