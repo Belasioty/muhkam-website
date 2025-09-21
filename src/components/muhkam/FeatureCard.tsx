@@ -25,7 +25,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div className="w-full max-w-[1280px] mx-auto px-8 max-md:px-5 mt-24">
       <div className={`flex gap-12 items-stretch max-md:flex-col ${imagePosition === 'right' ? 'flex-row' : 'flex-row-reverse'}`}>
-        <div className="w-1/5 max-md:w-full max-md:max-w-full flex flex-col justify-center">
+        <div className="w-2/5 max-md:w-full max-md:max-w-full flex flex-col justify-center">
           <h3 className="text-3xl font-bold text-blue-600 mb-6">{title}</h3>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed text-justify">{description}</p>
           
@@ -42,11 +42,11 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
           )}
         </div>
         
-        <div className="w-4/5 max-md:w-full max-md:max-w-full mt-4">
+        <div className="w-3/5 max-md:w-full max-md:max-w-full mt-4">
           {imageSrc.endsWith('.mp4') ? (
             <video
               src={imageSrc}
-              className="aspect-[18/10] w-full object-contain rounded-2xl"
+              className="aspect-[16/10] w-full object-contain rounded-2xl"
               autoPlay
               loop
               muted
@@ -56,7 +56,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
             <img 
               src={imageSrc} 
               alt={title}
-              className="aspect-[18/10] w-full object-contain rounded-2xl"
+              className="aspect-[16/10] w-full object-contain rounded-2xl"
             />
           )}
         </div>
