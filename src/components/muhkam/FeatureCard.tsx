@@ -48,7 +48,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
             {imageSrc.endsWith('.mp4') ? (
               <video
                 src={imageSrc}
-                className="relative z-10 w-full h-[280px] object-contain rounded-2xl"
+                className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
                 autoPlay
                 loop
                 muted
@@ -58,7 +58,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
               <img 
                 src={imageSrc} 
                 alt={title}
-                className="relative z-10 w-full h-[280px] object-contain rounded-2xl"
+                className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
               />
             )}
           </div>
