@@ -3,13 +3,14 @@ import { FeatureCard } from './FeatureCard';
 import grcUniverseImage from '@/assets/grc-universe-interface.png';
 import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
 import heroSectionImage from '@/assets/hero-section.png';
+import aiControlAssessmentImage from '@/assets/ai-control-assessment.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
     {
       title: "AI-Powered Control Assessment",
       description: "Traditional audits are slow and fragmented. With Muhkam, control assessments become instant and intelligent. Our AI agents use LLM-powered contextual reasoning guided by predefined instructions to deliver real-time insights and reports — helping you spot risks faster, prioritize actions, and stay compliant with ease.",
-      imageSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/7fa2275f19e704fe398a6e60a3ae8e1ab65ac2d6?placeholderIfAbsent=true",
+      imageSrc: aiControlAssessmentImage,
       checklistItems: [
         {
           text: "LLM-Based Contextual Reasoning",
