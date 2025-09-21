@@ -26,7 +26,7 @@ export const CTASection: React.FC = () => {
                 </div>
                 <div className="text-[#535862] text-xl font-normal leading-[30px] mt-5 max-md:max-w-full">
                   <span style={{ fontWeight: 700 }}>
-                    Stay Ahead – Audit Proactively, Not Reactively.Act Now, Secure Tomorrow.
+                    Stay Ahead – Audit Proactively, Not Reactively.
                   </span>
                 </div>
               </div>
