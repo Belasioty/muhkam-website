@@ -134,21 +134,9 @@ export const FeaturesSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
-        <video
-          src={animatedArrowVideo}
-          className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-      </div>
-      
-      <div className="w-[1280px] max-w-full text-center mt-16 px-8 max-md:mt-10 max-md:px-5">
-        <div className="flex w-full flex-col items-center max-md:max-w-full">
-          <div className="w-[768px] max-w-full">
+      <div className="w-[1280px] max-w-full mt-16 px-8 max-md:mt-10 max-md:px-5">
+        <div className="flex gap-12 items-center max-md:flex-col">
+          <div className="w-2/5 max-md:w-full">
             <div className="flex w-full flex-col text-4xl font-semibold tracking-[-0.72px] leading-none max-md:max-w-full">
               <div className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 max-md:max-w-full">
                 <span style={{ fontWeight: 400 }}>
@@ -162,6 +150,20 @@ export const FeaturesSection: React.FC = () => {
                 MUHKAM AI
               </span>{" "}
               Models generate and visualize"
+            </div>
+          </div>
+          
+          <div className="w-3/5 max-md:w-full">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
+              <video
+                src={animatedArrowVideo}
+                className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
         </div>
