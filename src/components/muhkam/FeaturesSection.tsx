@@ -2,6 +2,7 @@ import React from 'react';
 import { FeatureCard } from './FeatureCard';
 import grcUniverseImage from '@/assets/grc-universe-interface.png';
 import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
+import heroSectionImage from '@/assets/hero-section.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -29,7 +30,7 @@ export const FeaturesSection: React.FC = () => {
     {
       title: "Prompt-Visualize-Act",
       description: "Move beyond periodic checks with continuous compliance intelligence. Muhkam combines AI and knowledge graphs to dynamically map policies, controls, and risks — empowering you to instantly detect gaps, visualize impact, and act before issues escalate.",
-      imageSrc: animatedArrowVideo,
+      imageSrc: heroSectionImage,
       checklistItems: [
         {
           text: "AI GRC Assistant",
@@ -132,6 +133,18 @@ export const FeaturesSection: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
+        <video
+          src={animatedArrowVideo}
+          className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
       
       
