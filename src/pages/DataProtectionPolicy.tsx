@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigation } from '@/components/muhkam/Navigation';
-import { Footer } from '@/components/muhkam/Footer';
+import Footer from '@/components/Footer';
 
 export default function DataProtectionPolicy() {
   return (
