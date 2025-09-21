@@ -133,7 +133,6 @@ export const FeaturesSection: React.FC = () => {
             <div className="text-[#535862] text-xl font-normal leading-[30px] mt-5 max-md:max-w-full">
               Stop juggling disconnected tools and data sources.
               <br />
-              <br />
               Our AI-native platform unifies Audit, Governance, Compliance, and Risk into one intelligent system — giving you continuous compliance, trusted audits, and regulator-ready reporting.
             </div>
           </div>
