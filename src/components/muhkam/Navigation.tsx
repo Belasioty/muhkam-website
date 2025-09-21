@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { LogoProcessor } from '../LogoProcessor';
 import audaiLogo from '../../assets/audai-logo-new.png';
 
 export const Navigation: React.FC = () => {
   const location = useLocation();
   const isMainPage = location.pathname === '/';
+  const [logoUrl, setLogoUrl] = useState<string>(audaiLogo);
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,16 +16,18 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      {/* Logo and Brand Name */}
-      <div className="flex items-center gap-2">
-        <img
-          src={audaiLogo}
-          alt="Muhkam logo"
-          className="w-[40px] h-[40px] brightness-50 contrast-125"
-        />
-        <span className="text-blue-600 text-2xl font-medium">MUHKAM</span>
-      </div>
+    <>
+      <LogoProcessor onProcessed={setLogoUrl} />
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+        {/* Logo and Brand Name */}
+        <div className="flex items-center gap-2">
+          <img
+            src={logoUrl}
+            alt="Muhkam logo"
+            className="w-[40px] h-[40px]"
+          />
+          <span className="text-blue-600 text-2xl font-medium">MUHKAM</span>
+        </div>
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-8">
@@ -70,6 +74,7 @@ export const Navigation: React.FC = () => {
         )}
       </div>
 
-    </nav>
+      </nav>
+    </>
   );
 };
