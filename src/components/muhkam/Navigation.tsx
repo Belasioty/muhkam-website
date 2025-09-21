@@ -40,7 +40,7 @@ export const Navigation: React.FC = () => {
               onClick={() => scrollToSection('why-audai')}
               className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
             >
-              Why Muhkam
+              Why MUHKAM
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')}
