@@ -4,6 +4,7 @@ import grcUniverseImage from '@/assets/grc-universe-interface.png';
 import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
 import heroSectionImage from '@/assets/hero-section.png';
 import aiControlAssessmentImage from '@/assets/ai-control-assessment.png';
+import promptVisualizeActImage from '@/assets/prompt-visualize-act.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -31,7 +32,7 @@ export const FeaturesSection: React.FC = () => {
     {
       title: "Prompt-Visualize-Act",
       description: "Move beyond periodic checks with continuous compliance intelligence. Muhkam combines AI and knowledge graphs to dynamically map policies, controls, and risks — empowering you to instantly detect gaps, visualize impact, and act before issues escalate.",
-      imageSrc: heroSectionImage,
+      imageSrc: promptVisualizeActImage,
       checklistItems: [
         {
           text: "AI GRC Assistant",
