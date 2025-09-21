@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Muhkam from "./pages/Muhkam";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import DataProtectionPolicy from "./pages/DataProtectionPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
 
