@@ -43,25 +43,22 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
         </div>
         
         <div className="w-3/5 max-md:w-full max-md:max-w-full">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in inline-block">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
-            {imageSrc.endsWith('.mp4') ? (
-              <video
-                src={imageSrc}
-                className="relative z-10 aspect-[16/10] w-full object-contain rounded-2xl"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            ) : (
-              <img 
-                src={imageSrc} 
-                alt={title}
-                className="relative z-10 aspect-[16/10] w-full object-contain rounded-2xl"
-              />
-            )}
-          </div>
+          {imageSrc.endsWith('.mp4') ? (
+            <video
+              src={imageSrc}
+              className="aspect-[16/10] w-full object-contain rounded-2xl"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
+            <img 
+              src={imageSrc} 
+              alt={title}
+              className="aspect-[16/10] w-full object-contain rounded-2xl"
+            />
+          )}
         </div>
       </div>
     </div>
