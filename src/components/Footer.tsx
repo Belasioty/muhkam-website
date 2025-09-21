@@ -50,7 +50,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className="text-center text-sm text-[#4D4D4D] pt-6">
-        Copyright © 2024 GHB EMEA Ltd. All rights reserved. | 
+        Copyright © 2025 GHB EMEA Ltd. All rights reserved. | 
         <a href="/privacy-policy" className="hover:underline"> Privacy Policy</a> | 
         <a href="/terms-of-service" className="hover:underline"> Terms of Use</a> | 
         <a href="/data-protection" className="hover:underline"> Data Protection</a> | 

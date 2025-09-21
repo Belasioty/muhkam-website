@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
         
         <div className="border-t border-border mt-8 pt-8 flex justify-between items-center max-md:flex-col max-md:gap-4">
           <p className="text-muted-foreground">
-            © 2024 Muhkam. All rights reserved. | Contact: info@ghb-emea.com
+            © 2025 Muhkam. All rights reserved. | Contact: info@ghb-emea.com
           </p>
           <a href="https://www.linkedin.com/company/ghb-business-entrepreneurs/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors flex items-center gap-2" aria-label="LinkedIn">
             <Linkedin size={20} />
