@@ -5,6 +5,7 @@ import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
 import heroSectionImage from '@/assets/hero-section.png';
 import aiControlAssessmentImage from '@/assets/ai-control-assessment.png';
 import promptVisualizeActImage from '@/assets/prompt-visualize-act.png';
+import aiAuditPlanningImage from '@/assets/ai-audit-planning.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -53,7 +54,7 @@ export const FeaturesSection: React.FC = () => {
     {
       title: "AI-Powered Audit Planning",
       description: "Traditional audits are time-consuming and fragmented. With Muhkam, you can start your audit planning instantly, leverage intelligent AI agents, and get real-time insights and reports to quickly identify risks, prioritize actions, and ensure compliance.",
-      imageSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/f3a528899484805201169634fe9345e3d99d59e8?placeholderIfAbsent=true",
+      imageSrc: aiAuditPlanningImage,
       checklistItems: [
         {
           text: "Faster Preparation",
