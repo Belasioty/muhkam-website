@@ -1,5 +1,6 @@
 import React from 'react';
 import { FeatureCard } from './FeatureCard';
+import grcUniverseImage from '@/assets/grc-universe-interface.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -90,7 +91,7 @@ export const FeaturesSection: React.FC = () => {
     {
       title: "AI-Powered GRC Universe",
       description: "Bridge the communication gap between different teams and departments with our AI-Powered GRC Universe. Our intelligent system extracts, populates, and links entities across your organization into a unified knowledge graph, creating a common language for governance, risk, compliance and audit teams. AI automatically identifies relationships between policies, controls, risks, and processes, ensuring every team speaks the same GRC language and works from the same source of truth.",
-      imageSrc: "/src/assets/grc-universe-interface.png",
+      imageSrc: grcUniverseImage,
       checklistItems: [
         {
           text: "Unified Language Across Teams",
