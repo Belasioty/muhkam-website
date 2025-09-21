@@ -27,7 +27,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       <div className={`flex gap-16 items-center max-md:flex-col ${imagePosition === 'right' ? 'flex-row' : 'flex-row-reverse'}`}>
         <div className="flex-1 max-md:max-w-full">
           <h3 className="text-3xl font-bold text-blue-600 mb-6">{title}</h3>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">{description}</p>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed text-justify">{description}</p>
           
           <div className="mb-8">
             {checklistItems.map((item, index) => (
