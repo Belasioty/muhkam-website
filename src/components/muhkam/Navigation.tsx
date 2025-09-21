@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LogoProcessor } from '../LogoProcessor';
-import audaiLogo from '../../assets/audai-logo-new.png';
+import muhkamLogo from '../../assets/muhkam-logo-new.png';
 
 export const Navigation: React.FC = () => {
   const location = useLocation();
   const isMainPage = location.pathname === '/';
-  const [logoUrl, setLogoUrl] = useState<string>(audaiLogo);
+  const logoUrl = muhkamLogo;
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -16,9 +15,7 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <>
-      <LogoProcessor onProcessed={setLogoUrl} />
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
         {/* Logo and Brand Name */}
         <div className="flex items-center gap-2">
           <img
@@ -75,6 +72,5 @@ export const Navigation: React.FC = () => {
       </div>
 
       </nav>
-    </>
   );
 };
