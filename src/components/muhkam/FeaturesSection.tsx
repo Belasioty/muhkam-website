@@ -6,6 +6,7 @@ import heroSectionImage from '@/assets/hero-section.png';
 import aiControlAssessmentImage from '@/assets/ai-control-assessment.png';
 import promptVisualizeActImage from '@/assets/prompt-visualize-act.png';
 import aiAuditPlanningImage from '@/assets/ai-audit-planning.png';
+import aiPoweredGrcImage from '@/assets/ai-powered-grc.png';
 
 export const FeaturesSection: React.FC = () => {
   const features = [
@@ -75,7 +76,7 @@ export const FeaturesSection: React.FC = () => {
     {
       title: "AI-Powered GRC",
       description: "Our AI-Powered GRC modules transforms GRC from a static checklist into a dynamic, intelligent framework. By centralizing policies, procedures, authorization matrices, and committee decisions into one platform, it enables organizations to streamline decision-making, ensure accountability, and maintain full transparency. AI insights link governance data to risks, controls, and regulations within the Universe, giving leaders real-time visibility into how governance choices impact compliance and business performance. This turns governance into a living program—actionable, explainable, and future-ready.",
-      imageSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/5538dab781983fa76db2060f5f8f98627eb23f7c?placeholderIfAbsent=true",
+      imageSrc: aiPoweredGrcImage,
       checklistItems: [
         {
           text: "Efficiency & Cost Savings",
