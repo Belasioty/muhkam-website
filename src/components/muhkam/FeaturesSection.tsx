@@ -86,6 +86,27 @@ export const FeaturesSection: React.FC = () => {
       ],
       buttonText: undefined,
       imagePosition: 'left' as const
+    },
+    {
+      title: "AI-Powered GRC Universe",
+      description: "Bridge the communication gap between different teams and departments with our AI-Powered GRC Universe. Our intelligent system extracts, populates, and links entities across your organization into a unified knowledge graph, creating a common language for governance, risk, and compliance. AI automatically identifies relationships between policies, controls, risks, and processes, ensuring every team speaks the same GRC language and works from the same source of truth.",
+      imageSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/5538dab781983fa76db2060f5f8f98627eb23f7c?placeholderIfAbsent=true",
+      checklistItems: [
+        {
+          text: "Unified Language Across Teams",
+          iconSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/fd28192a8c5952b9a2516b057fd14485d2eab74f?placeholderIfAbsent=true"
+        },
+        {
+          text: "AI-Powered Entity Extraction & Linking",
+          iconSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/fd28192a8c5952b9a2516b057fd14485d2eab74f?placeholderIfAbsent=true"
+        },
+        {
+          text: "Knowledge Graph Universe",
+          iconSrc: "https://api.builder.io/api/v1/image/assets/275619cd8b38439686a74a9fbfcacc6a/a118cdfc75dc760b10c99582291ca32fb3579e66?placeholderIfAbsent=true"
+        }
+      ],
+      buttonText: undefined,
+      imagePosition: 'right' as const
     }
   ];
 
