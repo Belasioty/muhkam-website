@@ -134,17 +134,6 @@ export const FeaturesSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-4 animate-fade-in hover-scale transition-all duration-300">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10"></div>
-        <video
-          src={animatedArrowVideo}
-          className="relative z-10 aspect-[1.77] object-contain w-[714px] max-w-full rounded-2xl"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-      </div>
       
       <div className="w-[1280px] max-w-full text-center mt-16 px-8 max-md:mt-10 max-md:px-5">
         <div className="flex w-full flex-col items-center max-md:max-w-full">
