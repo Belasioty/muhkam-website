@@ -7,7 +7,7 @@ const TermsOfService = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-8 py-16 max-md:px-5">
+      <main className="max-w-4xl mx-auto px-8 py-16 pt-24 max-md:px-5">
         <h1 className="text-4xl font-bold text-foreground mb-8">Terms of Use for GHB Business Entrepreneurs LLC</h1>
         
         <div className="prose prose-lg max-w-none">

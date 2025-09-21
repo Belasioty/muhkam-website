@@ -3,7 +3,7 @@ import React from 'react';
 export default function DataProtectionPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 pt-24">
         <h1 className="text-4xl font-bold text-foreground mb-8">Data Protection Policy for GHB Business Entrepreneurs LLC</h1>
         
         <div className="prose prose-gray max-w-none">

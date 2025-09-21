@@ -7,7 +7,7 @@ const CookiePolicy = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-8 py-16 max-md:px-5">
+      <main className="max-w-4xl mx-auto px-8 py-16 pt-24 max-md:px-5">
         <h1 className="text-4xl font-bold text-[#333] mb-8">Cookie Policy</h1>
         
         <div className="prose prose-lg max-w-none text-[#4D4D4D]">
