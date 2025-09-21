@@ -5,7 +5,7 @@ import animatedArrowVideo from '@/assets/web-design-animated-arrow.mp4';
 import heroSectionImage from '@/assets/hero-section.png';
 import aiControlAssessmentImage from '@/assets/ai-control-assessment.png';
 import promptVisualizeActImage from '@/assets/prompt-visualize-act.png';
-import aiAuditPlanningImage from '@/assets/ai-audit-planning.png';
+import aiAuditPlanningImage from '@/assets/ai-audit-planning-new.png';
 import aiPoweredGrcImage from '@/assets/ai-powered-grc.png';
 
 export const FeaturesSection: React.FC = () => {
