@@ -90,7 +90,25 @@ export const Navigation: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobile && mobileMenuOpen && (
-        <div className="fixed inset-0 top-[72px] bg-white z-50 shadow-lg border-t border-gray-200">
+        <div className="fixed inset-0 top-0 bg-white z-50">
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+            <div className="flex items-center gap-2">
+              <img
+                src={logoUrl}
+                alt="Muhkam logo"
+                className="w-[32px] h-[32px]"
+              />
+              <span className="text-blue-600 text-xl font-medium">MUHKAM</span>
+            </div>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-2 text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          {/* Menu items */}
           <div className="flex flex-col px-6 py-8 space-y-6">
             {isMainPage ? (
               <>
