@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]   # or your default branch
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to push to gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # SPA fallback for GitHub Pages
+      - name: Copy index.html to 404.html
+        run: cp dist/index.html dist/404.html
+
+      - name: Debug build output (optional)
+        run: |
+          echo "Root:"
+          ls -la
+          echo "dist:"
+          ls -la dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAT }}   # Use built-in token
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          cname: muhkam.ai                   # custom domain
+          force_orphan: true
+
