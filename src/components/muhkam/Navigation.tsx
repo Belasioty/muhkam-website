@@ -90,55 +90,56 @@ export const Navigation: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobile && mobileMenuOpen && (
-        <div className="fixed inset-0 top-0 bg-white z-50">
-          {/* Header with logo and close button */}
-          <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
-            <div className="flex items-center gap-2">
-              <img
-                src={logoUrl}
-                alt="Muhkam logo"
-                className="w-[32px] h-[32px]"
-              />
-              <span className="text-blue-600 text-xl font-medium">MUHKAM</span>
+        <div className="fixed inset-0 top-0 bg-black/20 z-50 backdrop-blur-sm">
+          <div className="bg-white mx-4 mt-4 rounded-lg shadow-xl border border-gray-200">
+            {/* Header with logo and close button */}
+            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+              <div className="flex items-center gap-2">
+                <img
+                  src={logoUrl}
+                  alt="Muhkam logo"
+                  className="w-[32px] h-[32px]"
+                />
+                <span className="text-blue-600 text-xl font-medium">MUHKAM</span>
+              </div>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-gray-800 hover:text-blue-600 transition-colors"
+              >
+                <X size={24} />
+              </button>
             </div>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          {/* Menu items */}
-          <div className="flex flex-col px-6 py-8 space-y-6">
+            {/* Menu items */}
+            <div className="flex flex-col px-6 py-6 space-y-4">
             {isMainPage ? (
               <>
                 <button 
                   onClick={() => scrollToSection('overview')}
-                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
                 >
                   Overview
                 </button>
                 <button 
                   onClick={() => scrollToSection('why-audai')}
-                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
                 >
                   Why MUHKAM
                 </button>
                 <button 
                   onClick={() => scrollToSection('how-it-works')}
-                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
                 >
                   How It Works
                 </button>
                 <button 
                   onClick={() => scrollToSection('use-cases')}
-                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
                 >
                   Use Cases
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                  className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
                 >
                   Contact Us
                 </button>
@@ -147,13 +148,14 @@ export const Navigation: React.FC = () => {
               <Link 
                 to="/" 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left"
+                className="text-gray-800 hover:text-blue-600 transition-colors font-medium text-lg text-left py-2"
               >
                 ← Back to Home
               </Link>
             )}
           </div>
         </div>
+      </div>
       )}
     </nav>
   );
