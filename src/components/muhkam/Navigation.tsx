@@ -91,7 +91,7 @@ export const Navigation: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isMobile && mobileMenuOpen && (
         <div className="fixed inset-0 top-0 bg-black/20 z-50 backdrop-blur-sm">
-          <div className="bg-white mx-auto mt-4 w-2/3 max-w-sm rounded-lg shadow-xl border border-gray-200">
+          <div className="bg-white mr-4 mt-4 w-2/3 max-w-sm ml-auto rounded-lg shadow-xl border border-gray-200">
             {/* Header with logo and close button */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
               <div className="flex items-center gap-2">
