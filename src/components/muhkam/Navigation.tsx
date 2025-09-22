@@ -20,49 +20,49 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 lg:px-8 py-3 md:py-4 border-b border-gray-200 bg-white/80 backdrop-blur-md">
       {/* Logo and Brand Name */}
       <div className="flex items-center gap-2">
         <img
           src={logoUrl}
           alt="Muhkam logo"
-          className="w-[32px] h-[32px] md:w-[40px] md:h-[40px]"
+          className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] lg:w-[40px] lg:h-[40px]"
         />
-        <span className="text-blue-600 text-xl md:text-2xl font-medium">MUHKAM</span>
+        <span className="text-blue-600 text-lg md:text-xl lg:text-2xl font-medium">MUHKAM</span>
       </div>
 
       {/* Desktop Navigation Links */}
       {!isMobile && (
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
           {isMainPage ? (
             <>
               <button 
                 onClick={() => scrollToSection('overview')}
-                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
               >
                 Overview
               </button>
               <button 
                 onClick={() => scrollToSection('why-audai')}
-                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
               >
                 Why MUHKAM
               </button>
               <button 
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
               >
                 How It Works
               </button>
               <button 
                 onClick={() => scrollToSection('use-cases')}
-                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
               >
                 Use Cases
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+                className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
               >
                 Contact Us
               </button>
@@ -70,7 +70,7 @@ export const Navigation: React.FC = () => {
           ) : (
             <Link 
               to="/" 
-              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-4 py-2 text-lg"
+              className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer font-medium px-2 md:px-3 lg:px-4 py-2 text-base md:text-lg"
             >
               ← Back to Home
             </Link>
