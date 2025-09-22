@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const CTASection: React.FC = () => {
   const { toast } = useToast();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,8 +16,8 @@ export const CTASection: React.FC = () => {
 
     try {
       const formData = {
-        firstName: 'Quick',
-        lastName: 'Contact',
+        firstName,
+        lastName,
         email,
         subject: 'Contact Request from Homepage',
         message: message || 'I am interested in learning more about your services.',
@@ -35,6 +37,8 @@ export const CTASection: React.FC = () => {
       }
 
       // Reset form
+      setFirstName('');
+      setLastName('');
       setEmail('');
       setMessage('');
       
@@ -73,6 +77,37 @@ export const CTASection: React.FC = () => {
               </div>
               
               <form onSubmit={handleSubmit} className="w-full max-w-md mt-8 space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Enter your first name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Enter your last name"
+                    />
+                  </div>
+                </div>
+                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address
