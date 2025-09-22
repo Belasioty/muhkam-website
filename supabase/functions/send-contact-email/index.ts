@@ -20,7 +20,13 @@ interface ContactFormData {
   interestedIn?: string;
   contactMethod?: string;
   contactTime?: string;
+  honeypot?: string;
+  submissionTime?: number;
+  currentTime?: number;
 }
+
+// Rate limiting storage (in-memory for simplicity)
+const submissionAttempts = new Map<string, number[]>();
 
 const handler = async (req: Request): Promise<Response> => {
   console.log("Contact email function called");
@@ -34,35 +40,106 @@ const handler = async (req: Request): Promise<Response> => {
     const formData: ContactFormData = await req.json();
     console.log("Received form data:", formData);
 
-    // Send email to GHB EMEA
+    // Spam prevention checks
+    
+    // 1. Honeypot check
+    if (formData.honeypot && formData.honeypot.trim() !== '') {
+      console.log("Honeypot field filled, blocking submission");
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid submission" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // 2. Time-based check (form must be open for at least 3 seconds)
+    if (formData.submissionTime && formData.currentTime) {
+      const formOpenTime = formData.currentTime - formData.submissionTime;
+      if (formOpenTime < 3000) { // Less than 3 seconds
+        console.log("Form submitted too quickly, blocking submission");
+        return new Response(
+          JSON.stringify({ success: false, error: "Please take more time to fill the form" }),
+          { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+        );
+      }
+    }
+
+    // 3. Rate limiting by email (max 3 submissions per hour)
+    const clientEmail = formData.email;
+    const now = Date.now();
+    const oneHour = 60 * 60 * 1000;
+    
+    if (!submissionAttempts.has(clientEmail)) {
+      submissionAttempts.set(clientEmail, []);
+    }
+    
+    const emailAttempts = submissionAttempts.get(clientEmail)!;
+    // Remove attempts older than 1 hour
+    const recentAttempts = emailAttempts.filter(timestamp => now - timestamp < oneHour);
+    
+    if (recentAttempts.length >= 3) {
+      console.log("Rate limit exceeded for email:", clientEmail);
+      return new Response(
+        JSON.stringify({ success: false, error: "Too many submissions. Please try again later." }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+    
+    // Add current attempt
+    recentAttempts.push(now);
+    submissionAttempts.set(clientEmail, recentAttempts);
+
+    // 4. Basic input validation and sanitization
+    const sanitizedData = {
+      firstName: formData.firstName?.trim().slice(0, 100) || '',
+      lastName: formData.lastName?.trim().slice(0, 100) || '',
+      email: formData.email?.trim().slice(0, 254) || '',
+      phone: formData.phone?.trim().slice(0, 20) || '',
+      subject: formData.subject?.trim().slice(0, 200) || '',
+      message: formData.message?.trim().slice(0, 2000) || '',
+      hearAbout: formData.hearAbout?.trim().slice(0, 100) || '',
+      interestedIn: formData.interestedIn?.trim().slice(0, 200) || '',
+      contactMethod: formData.contactMethod?.trim().slice(0, 50) || '',
+      contactTime: formData.contactTime?.trim().slice(0, 50) || ''
+    };
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(sanitizedData.email)) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid email address" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Send email to GHB EMEA using sanitized data
     const emailResponse = await resend.emails.send({
       from: "GHB Contact Form <noreply@ghb-emea.com>",
       to: ["hatem.eladl@ghb-emea.com"],
-      subject: `New Contact Form Submission: ${formData.subject}`,
+      subject: `New Contact Form Submission: ${sanitizedData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0A5180;">New Contact Form Submission</h2>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="margin-top: 0; color: #333;">Contact Information</h3>
-            <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            ${formData.phone ? `<p><strong>Phone:</strong> ${formData.phone}</p>` : ''}
-            <p><strong>Subject:</strong> ${formData.subject}</p>
+            <p><strong>Name:</strong> ${sanitizedData.firstName} ${sanitizedData.lastName}</p>
+            <p><strong>Email:</strong> ${sanitizedData.email}</p>
+            ${sanitizedData.phone ? `<p><strong>Phone:</strong> ${sanitizedData.phone}</p>` : ''}
+            <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
           </div>
 
           <div style="margin: 20px 0;">
             <h3 style="color: #333;">Message</h3>
-            <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; white-space: pre-wrap;">${formData.message}</p>
+            <p style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; white-space: pre-wrap;">${sanitizedData.message}</p>
           </div>
 
-          ${formData.interestedIn ? `
+          ${sanitizedData.interestedIn ? `
           <div style="margin: 20px 0;">
             <h3 style="color: #333;">Additional Information</h3>
-            <p><strong>Interested in:</strong> ${formData.interestedIn}</p>
-            ${formData.hearAbout ? `<p><strong>How they heard about us:</strong> ${formData.hearAbout}</p>` : ''}
-            ${formData.contactMethod ? `<p><strong>Preferred contact method:</strong> ${formData.contactMethod}</p>` : ''}
-            ${formData.contactTime ? `<p><strong>Preferred contact time:</strong> ${formData.contactTime}</p>` : ''}
+            <p><strong>Interested in:</strong> ${sanitizedData.interestedIn}</p>
+            ${sanitizedData.hearAbout ? `<p><strong>How they heard about us:</strong> ${sanitizedData.hearAbout}</p>` : ''}
+            ${sanitizedData.contactMethod ? `<p><strong>Preferred contact method:</strong> ${sanitizedData.contactMethod}</p>` : ''}
+            ${sanitizedData.contactTime ? `<p><strong>Preferred contact time:</strong> ${sanitizedData.contactTime}</p>` : ''}
           </div>
           ` : ''}
           
@@ -75,16 +152,16 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully:", emailResponse);
 
-    // Send confirmation email to the user
+    // Send confirmation email to the user using sanitized data
     const confirmationResponse = await resend.emails.send({
       from: "GHB EMEA <noreply@ghb-emea.com>",
-      to: [formData.email],
+      to: [sanitizedData.email],
       subject: "Thank you for contacting GHB EMEA",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #0A5180;">Thank you for contacting us!</h2>
           
-          <p style="color: #333;">Dear ${formData.firstName},</p>
+          <p style="color: #333;">Dear ${sanitizedData.firstName},</p>
           
           <p style="color: #333;">We have received your message and our team will get back to you as soon as possible.</p>
           

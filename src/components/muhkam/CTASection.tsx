@@ -8,13 +8,26 @@ export const CTASection: React.FC = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionTime] = useState(Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // Spam prevention: Check honeypot
+      if (honeypot) {
+        toast({
+          title: "Error",
+          description: "Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
       const formData = {
         firstName,
         lastName,
@@ -25,7 +38,9 @@ export const CTASection: React.FC = () => {
         hearAbout: '',
         interestedIn: '',
         contactMethod: 'email',
-        contactTime: 'asap'
+        contactTime: 'asap',
+        submissionTime,
+        currentTime: Date.now()
       };
 
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
@@ -41,6 +56,7 @@ export const CTASection: React.FC = () => {
       setLastName('');
       setEmail('');
       setMessage('');
+      setHoneypot('');
       
       toast({
         title: "Thank you for your interest!",
@@ -136,6 +152,16 @@ export const CTASection: React.FC = () => {
                     placeholder="Tell us about your needs"
                   />
                 </div>
+                
+                {/* Honeypot field - hidden from users */}
+                <input
+                  type="text"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 
                 <button
                   type="submit"

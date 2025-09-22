@@ -15,8 +15,10 @@ const ContactForm = () => {
     hearAbout: '',
     interestedIn: '',
     contactMethod: '',
-    contactTime: ''
+    contactTime: '',
+    honeypot: ''
   });
+  const [submissionTime] = useState(Date.now());
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -31,8 +33,25 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Spam prevention: Check honeypot and submission time
+      if (formData.honeypot) {
+        toast({
+          title: "Error",
+          description: "Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const submissionData = {
+        ...formData,
+        submissionTime,
+        currentTime: Date.now()
+      };
+
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
+        body: submissionData
       });
 
       if (error) {
@@ -50,7 +69,8 @@ const ContactForm = () => {
         hearAbout: '',
         interestedIn: '',
         contactMethod: '',
-        contactTime: ''
+        contactTime: '',
+        honeypot: ''
       });
 
       toast({
@@ -248,6 +268,18 @@ const ContactForm = () => {
             <option value="no-rush">No rush</option>
           </select>
         </div>
+        
+        {/* Honeypot field - hidden from users */}
+        <input
+          type="text"
+          name="honeypot"
+          value={formData.honeypot}
+          onChange={handleInputChange}
+          style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+        
         <div className="flex justify-center">
           <button
             type="submit"
