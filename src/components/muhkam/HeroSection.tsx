@@ -28,8 +28,8 @@ export const HeroSection: React.FC = () => {
               </div>
               
               <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed opacity-90">
-                AI-powered platform unifying Audit, Governance, Compliance, and Risk into one intelligent system.
-                Dedicated to Arabic, MENA, and Islamic regulatory frameworks for banking and SMEs — with continuous oversight, AI-driven workflows, and regulator-ready reporting.
+                MUHKAM is your trusted partner in building a secure and compliant digital ecosystem — with an AI-powered platform that unifies Audit, Governance, Compliance, and Risk into one intelligent system.
+                Designed for Arabic, MENA region, and Islamic regulatory frameworks for banking and SMEs, it delivers continuous oversight, AI-driven workflows, and regulator-ready reporting.
               </p>
               
               <Button 
