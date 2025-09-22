@@ -82,25 +82,15 @@ const handler = async (req: Request): Promise<Response> => {
       subject: "Thank you for contacting GHB EMEA",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h2 style="color: #0A5180; margin-bottom: 20px;">Thank you for contacting us!</h2>
+          <h2 style="color: #0A5180;">Thank you for contacting us!</h2>
           
-          <p style="color: #333; margin-bottom: 15px;">Dear ${formData.firstName},</p>
+          <p style="color: #333;">Dear ${formData.firstName},</p>
           
-          <p style="color: #333; margin-bottom: 20px;">We have received your message and appreciate you reaching out to GHB EMEA. Our team will review your inquiry and get back to you as soon as possible.</p>
+          <p style="color: #333;">We have received your message and our team will get back to you as soon as possible.</p>
           
-          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">Your Message Summary</h3>
-            <p style="margin: 5px 0; color: #333;"><strong>Subject:</strong> ${formData.subject}</p>
-            <p style="margin: 5px 0; color: #333;"><strong>Message:</strong> ${formData.message}</p>
-          </div>
+          <p style="color: #333;">If you have any urgent matters, please don't hesitate to contact us directly.</p>
           
-          <p style="color: #333; margin: 15px 0;">If you have any urgent matters or additional questions, please don't hesitate to contact us directly.</p>
-          
-          <p style="color: #333; margin: 15px 0;">Best regards,<br>The GHB EMEA Team</p>
-          
-          <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd;">
-            <p style="color: #666; font-size: 12px; margin: 0;">This is an automated confirmation email. Please do not reply to this message.</p>
-          </div>
+          <p style="color: #333;">Best regards,<br>The GHB EMEA Team</p>
         </div>
       `,
     });
