@@ -84,9 +84,9 @@ const handler = async (req: Request): Promise<Response> => {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0A5180;">Thank you for contacting us!</h2>
           
-          <p style="color: #0A5180;">Dear ${formData.firstName},</p>
+          <p style="color: #333;">Dear ${formData.firstName},</p>
           
-          <p>We have received your message and appreciate you reaching out to GHB EMEA. Our team will review your inquiry and get back to you as soon as possible.</p>
+          <p style="color: #333;">We have received your message and appreciate you reaching out to GHB EMEA. Our team will review your inquiry and get back to you as soon as possible.</p>
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="margin-top: 0; color: #333;">Your Message Summary</h3>
@@ -94,9 +94,9 @@ const handler = async (req: Request): Promise<Response> => {
             <p><strong>Message:</strong> ${formData.message}</p>
           </div>
           
-          <p>If you have any urgent matters or additional questions, please don't hesitate to contact us directly.</p>
+          <p style="color: #333;">If you have any urgent matters or additional questions, please don't hesitate to contact us directly.</p>
           
-          <p>Best regards,<br>
+          <p style="color: #333;">Best regards,<br>
           The GHB EMEA Team</p>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px;">
