@@ -1,7 +1,19 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+// Initialize Resend with error handling
+let resend: any = null;
+try {
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) {
+    console.error("RESEND_API_KEY not found in environment variables");
+  } else {
+    resend = new Resend(apiKey);
+    console.log("Resend initialized successfully");
+  }
+} catch (error) {
+  console.error("Error initializing Resend:", error);
+}
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -37,6 +49,15 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Check if Resend is properly initialized
+    if (!resend) {
+      console.error("Resend not initialized - missing API key");
+      return new Response(
+        JSON.stringify({ success: false, error: "Email service not configured" }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     const formData: ContactFormData = await req.json();
     console.log("Received form data:", formData);
 
