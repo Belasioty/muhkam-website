@@ -84,7 +84,7 @@ const handler = async (req: Request): Promise<Response> => {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0A5180;">Thank you for contacting us!</h2>
           
-          <p>Dear ${formData.firstName},</p>
+          <p style="color: #0A5180;">Dear ${formData.firstName},</p>
           
           <p>We have received your message and appreciate you reaching out to GHB EMEA. Our team will review your inquiry and get back to you as soon as possible.</p>
           
