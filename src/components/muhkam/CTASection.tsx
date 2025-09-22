@@ -66,7 +66,7 @@ export const CTASection: React.FC = () => {
           <div className="min-w-60 w-full flex-1 shrink basis-[0%] px-8 max-md:max-w-full max-md:px-5">
             <div className="flex w-full flex-col items-center max-md:max-w-full">
               <div className="w-[768px] max-w-full text-center">
-                <div className="text-[#181D27] text-4xl font-semibold leading-none tracking-[-0.72px] max-md:max-w-full">
+                <div className="bg-clip-text text-transparent bg-gradient-to-br from-purple-400 via-blue-500 to-purple-600 text-4xl font-semibold leading-none tracking-[-0.72px] max-md:max-w-full">
                   Don't Wait for Compliance Gaps.
                 </div>
                 <div className="text-[#535862] text-xl font-normal leading-[30px] mt-5 max-md:max-w-full">
