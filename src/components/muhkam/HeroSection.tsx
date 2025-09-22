@@ -22,13 +22,10 @@ export const HeroSection: React.FC = () => {
                 <span className="block">Unified.</span>
               </h1>
               
-              <div className="mb-6">
-                <span className="text-2xl md:text-3xl font-semibold text-blue-200 drop-shadow-[0_0_8px_rgba(147,197,253,0.8)]">MUHKAM</span>
-              </div>
-              
               <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed opacity-90">
-                MUHKAM is your trusted partner in building a secure and compliant digital ecosystem — with an AI-powered platform that unifies Audit, Governance, Compliance, and Risk into one intelligent system.
-                Designed for Arabic, MENA region, and Islamic regulatory frameworks for banking and SMEs, it delivers continuous oversight, AI-driven workflows, and regulator-ready reporting.
+                <span className="text-2xl md:text-3xl font-semibold text-blue-200 drop-shadow-[0_0_8px_rgba(147,197,253,0.8)]">MUHKAM</span>
+                <span className="text-lg md:text-xl"> is your trusted partner in building a secure and compliant digital ecosystem — with an AI-powered platform that unifies Audit, Governance, Compliance, and Risk into one intelligent system.
+                Designed for Arabic, MENA region, and Islamic regulatory frameworks for banking and SMEs, it delivers continuous oversight, AI-driven workflows, and regulator-ready reporting.</span>
               </p>
               
               <Button 
