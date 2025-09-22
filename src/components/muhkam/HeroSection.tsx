@@ -28,8 +28,8 @@ export const HeroSection: React.FC = () => {
               </div>
               
               <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed opacity-90">
-                Our AI-powered platform unifies Audit, Governance, Compliance, and Risk into one intelligent system giving you continuous 
-                oversight, automated workflows, and regulator-ready reporting.
+                AI-powered platform unifying Audit, Governance, Compliance, and Risk into one intelligent system.
+                Dedicated to Arabic, MENA, and Islamic regulatory frameworks for banking and SMEs — with continuous oversight, AI-driven workflows, and regulator-ready reporting.
               </p>
               
               <Button 
