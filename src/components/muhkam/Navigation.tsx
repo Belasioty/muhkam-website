@@ -90,7 +90,7 @@ export const Navigation: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobile && mobileMenuOpen && (
-        <div className="fixed inset-0 top-[72px] bg-white/95 backdrop-blur-md z-40">
+        <div className="fixed inset-0 top-[72px] bg-white backdrop-blur-md z-50 shadow-lg border-t border-gray-200">
           <div className="flex flex-col px-6 py-8 space-y-6">
             {isMainPage ? (
               <>
