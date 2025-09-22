@@ -37,7 +37,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to GHB EMEA
     const emailResponse = await resend.emails.send({
       from: "GHB Contact Form <noreply@ghb-emea.com>",
-      to: ["info@ghb-emea.com"],
+      to: ["hatem.eladl@ghb-emea.com"],
       subject: `New Contact Form Submission: ${formData.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
