@@ -49,9 +49,9 @@ const Navbar = () => {
           </button>
           <Button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            variant="outline"
+            variant="default"
             size="sm"
-            className="flex items-center gap-2 text-sm lg:text-base font-medium whitespace-nowrap"
+            className="flex items-center gap-2 text-sm lg:text-base font-medium whitespace-nowrap bg-[#0A5180] hover:bg-[#084066] text-white"
           >
             <Users size={16} />
             Contact Sales
