@@ -35,7 +35,7 @@ export const UseCasesSection: React.FC = () => {
                   Board Decision Transparency
                 </span>
                 <span className="text-sm md:text-base lg:text-lg leading-relaxed md:leading-7">
-                – Imagine a financial institution using our AI-Powered Governance Program to centralize board and committee decisions. Policies, procedures, and authorization matrices would be linked in real time to risks and controls through the Knowledge Graph. This would ensure every decision is traceable, compliant with regulatory requirements, and instantly reportable to auditors and regulators.
+                  Imagine a financial institution using our AI-Powered Governance Program to centralize board and committee decisions. Policies, procedures, and authorization matrices would be linked in real time to risks and controls through the Knowledge Graph. This would ensure every decision is traceable, compliant with regulatory requirements, and instantly reportable to auditors and regulators.
                 </span>
               </div>
             </div>
@@ -52,7 +52,7 @@ export const UseCasesSection: React.FC = () => {
                   Risk-Based Audit Planning
                 </span>
                 <span className="text-sm md:text-base lg:text-lg leading-relaxed md:leading-7">
-                – With our AI-Powered Audit Planning, an international bank could automatically map risks to controls and prioritize high-risk areas. By connecting directly to core systems and documents, evidence could be collected automatically, reducing planning time from weeks to days. The result would be smarter, adaptive audits that focus on what matters most, with instant reporting for management and regulators.
+                  With our AI-Powered Audit Planning, an international bank could automatically map risks to controls and prioritize high-risk areas. By connecting directly to core systems and documents, evidence could be collected automatically, reducing planning time from weeks to days. The result would be smarter, adaptive audits that focus on what matters most, with instant reporting for management and regulators.
                 </span>
               </div>
             </div>
