@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import audaiLogo from '@/assets/audai-logo-new.png';
 
 const Navbar = () => {
@@ -45,12 +47,15 @@ const Navbar = () => {
           >
             Our Team
           </button>
-          <button 
+          <Button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2 text-sm lg:text-base font-medium whitespace-nowrap"
           >
-            Contact Us
-          </button>
+            <Users size={16} />
+            Contact Sales
+          </Button>
           </div>
         </div>
         
