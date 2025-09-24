@@ -1,19 +1,19 @@
-name: Deploy to GitHub Pages
+name: Build & Publish to Public Pages Repo
 
 on:
   push:
-    branches: [ "main" ]   # or your default branch
+    branches: [ "main" ]      # or your default branch
   workflow_dispatch:
 
 permissions:
-  contents: write   # needed to push to gh-pages
+  contents: read              # read this repo's code
 
 jobs:
-  deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Use Node.js
@@ -28,16 +28,25 @@ jobs:
       - name: Build
         run: npm run build
 
-      # SPA fallback for GitHub Pages
+      # SPA fallback for GitHub Pages (optional but recommended)
       - name: Copy index.html to 404.html
-        run: cp dist/index.html dist/404.html
-
-      - name: Debug build output (optional)
         run: |
-          echo "Root:"
-          ls -la
-          echo "dist:"
-          ls -la dist
+          if [ -f dist/index.html ]; then cp dist/index.html dist/404.html; fi
+
+      # Publish build output to a separate PUBLIC repo's gh-pages branch
+      - name: Publish to external repo (gh-pages)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_PAT_PUBLIC }}
+          external_repository: Belasioty/muhkam-website-public   # <-- change this
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          cname: muhkam.ai     # creates/updates CNAME file in target repo
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          force_orphan: true
+
+          
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
