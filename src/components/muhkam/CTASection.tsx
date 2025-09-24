@@ -6,6 +6,7 @@ export const CTASection: React.FC = () => {
   const { toast } = useToast();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [honeypot, setHoneypot] = useState('');
@@ -31,6 +32,7 @@ export const CTASection: React.FC = () => {
       const formData = {
         firstName,
         lastName,
+        company,
         email,
         subject: 'Contact Request from Homepage',
         message: message || 'I am interested in learning more about your services.',
@@ -54,6 +56,7 @@ export const CTASection: React.FC = () => {
       // Reset form
       setFirstName('');
       setLastName('');
+      setCompany('');
       setEmail('');
       setMessage('');
       setHoneypot('');
@@ -122,6 +125,21 @@ export const CTASection: React.FC = () => {
                       placeholder="Enter your last name"
                     />
                   </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter your company name"
+                  />
                 </div>
                 
                 <div>
