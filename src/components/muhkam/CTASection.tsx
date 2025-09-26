@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export const CTASection: React.FC = () => {
   const { toast } = useToast();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [hearAbout, setHearAbout] = useState('');
+  const [interestedIn, setInterestedIn] = useState('');
+  const [contactMethod, setContactMethod] = useState('');
+  const [contactTime, setContactTime] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionTime] = useState(Date.now());
@@ -32,15 +41,14 @@ export const CTASection: React.FC = () => {
       const formData = {
         firstName,
         lastName,
-        company,
         email,
-        subject: 'Contact Request from Homepage',
-        message: message || 'I am interested in learning more about your services.',
-        phone: '',
-        hearAbout: '',
-        interestedIn: '',
-        contactMethod: 'email',
-        contactTime: 'asap',
+        phone,
+        subject,
+        message,
+        hearAbout,
+        interestedIn,
+        contactMethod,
+        contactTime,
         submissionTime,
         currentTime: Date.now()
       };
@@ -56,9 +64,14 @@ export const CTASection: React.FC = () => {
       // Reset form
       setFirstName('');
       setLastName('');
-      setCompany('');
       setEmail('');
+      setPhone('');
+      setSubject('');
       setMessage('');
+      setHearAbout('');
+      setInterestedIn('');
+      setContactMethod('');
+      setContactTime('');
       setHoneypot('');
       
       toast({
@@ -95,81 +108,168 @@ export const CTASection: React.FC = () => {
                 </div>
               </div>
               
-              <form onSubmit={handleSubmit} className="w-full max-w-md mt-8 space-y-4">
+              <form onSubmit={handleSubmit} className="w-full max-w-2xl mt-8 space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
-                    </label>
-                    <input
+                    <Label htmlFor="firstName" className="text-foreground">
+                      First Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
                       type="text"
                       id="firstName"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Enter your first name"
+                      placeholder="First Name"
+                      className="mt-2"
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
-                    </label>
-                    <input
+                    <Label htmlFor="lastName" className="text-foreground">
+                      Last Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
                       type="text"
                       id="lastName"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Enter your last name"
+                      placeholder="Last Name"
+                      className="mt-2"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="email" className="text-foreground">
+                      Email <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      type="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      placeholder="Email"
+                      className="mt-2"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone" className="text-foreground">
+                      Phone Number <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      type="tel"
+                      id="phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                      placeholder="Phone Number"
+                      className="mt-2"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company Name
-                  </label>
-                  <input
+                  <Label htmlFor="subject" className="text-foreground">
+                    Subject <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
                     type="text"
-                    id="company"
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
+                    id="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your company name"
+                    placeholder="Subject"
+                    className="mt-2"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
+                  <Label htmlFor="message" className="text-foreground">
+                    Message <span className="text-red-500">*</span>
+                  </Label>
+                  <Textarea
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    rows={3}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Tell us about your needs"
+                    rows={5}
+                    placeholder="Message"
+                    className="mt-2"
                   />
+                </div>
+                
+                <div>
+                  <Label className="text-foreground">
+                    How did you hear about us? <span className="text-red-500">*</span>
+                  </Label>
+                  <Select value={hearAbout} onValueChange={setHearAbout} required>
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Please select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="google">Google</SelectItem>
+                      <SelectItem value="social-media">Social Media</SelectItem>
+                      <SelectItem value="referral">Referral</SelectItem>
+                      <SelectItem value="conference">Conference/Event</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label className="text-foreground">
+                    Are you interested in: <span className="text-red-500">*</span>
+                  </Label>
+                  <Select value={interestedIn} onValueChange={setInterestedIn} required>
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Please select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="audit-planning">AI Audit Planning</SelectItem>
+                      <SelectItem value="control-assessment">Control Assessment</SelectItem>
+                      <SelectItem value="grc-platform">GRC Platform</SelectItem>
+                      <SelectItem value="consulting">Consulting Services</SelectItem>
+                      <SelectItem value="training">Training</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label className="text-foreground">
+                    What is your preferred method of contact? <span className="text-red-500">*</span>
+                  </Label>
+                  <Select value={contactMethod} onValueChange={setContactMethod} required>
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Please select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="email">Email</SelectItem>
+                      <SelectItem value="phone">Phone</SelectItem>
+                      <SelectItem value="whatsapp">WhatsApp</SelectItem>
+                      <SelectItem value="teams">Microsoft Teams</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label className="text-foreground">
+                    When would you like to be contacted? <span className="text-red-500">*</span>
+                  </Label>
+                  <Select value={contactTime} onValueChange={setContactTime} required>
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Please select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="asap">As soon as possible</SelectItem>
+                      <SelectItem value="within-week">Within a week</SelectItem>
+                      <SelectItem value="within-month">Within a month</SelectItem>
+                      <SelectItem value="next-quarter">Next quarter</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
                 {/* Honeypot field - hidden from users */}
