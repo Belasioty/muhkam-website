@@ -71,9 +71,6 @@ const PrivacyPolicy = () => {
             <p className="text-muted-foreground mb-4">
               GHB has appointed a Data Protection Officer (DPO) to oversee our privacy program. Any comments, complaints or questions regarding this policy may be addressed to info@ghb-emea.com or alternatively you can call us on +974 44292573.
             </p>
-            <p className="text-muted-foreground">
-              Further information regarding our office location can be found on our website: https://www.ghb-emea.com/contact-us
-            </p>
           </section>
 
           <section className="mb-8">
