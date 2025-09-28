@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-semibold text-[#333]">Address</h3>
           <address className="text-base text-[#4D4D4D] max-w-[300px] not-italic">
-            Office No.BL12, Floor 22, Servcorp, No17, Tornado Tower, Doha
+            PO Box 27774, Tornado Tower L22, West Bay Doha, Qatar
           </address>
         </div>
         <div className="flex flex-col gap-4">

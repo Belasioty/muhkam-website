@@ -14,6 +14,13 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
+            <h4 className="font-medium text-foreground mb-4">Address</h4>
+            <address className="text-muted-foreground not-italic">
+              PO Box 27774, Tornado Tower L22, West Bay Doha, Qatar
+            </address>
+          </div>
+          
+          <div>
             <h4 className="font-medium text-foreground mb-4">Product</h4>
             <ul className="space-y-2">
               <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
