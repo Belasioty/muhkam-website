@@ -83,7 +83,7 @@ const CookiePolicy = () => {
             </p>
             <p className="mb-2">Email: info@ghb-emea.com</p>
             <p className="mb-2">Phone: +44 7424 5678</p>
-            <p>Address: Office No.BL12, Floor 22, Servcorp, No17, Tornado Tower, Doha</p>
+            <p>Address: PO Box 27774, Tornado Tower L22, West Bay Doha, Qatar</p>
           </section>
         </div>
       </main>
