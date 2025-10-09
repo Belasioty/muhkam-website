@@ -16,35 +16,35 @@ const Navbar = () => {
           />
         </div>
           
-        {/* Navigation Links - centered and evenly distributed */}
-        <div className="hidden lg:flex items-center justify-center flex-1 gap-1">
+        {/* Navigation Links - left aligned and evenly distributed */}
+        <div className="hidden lg:flex items-center flex-1 gap-1">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Home
           </button>
           <button 
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Services
           </button>
           <button 
             onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Benefits
           </button>
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             About Us
           </button>
           <button 
             onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             Our Team
           </button>
