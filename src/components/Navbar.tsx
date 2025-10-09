@@ -7,9 +7,9 @@ import audaiLogo from '@/assets/audai-logo-new.png';
 const Navbar = () => {
   return (
     <div className="w-full">
-      <nav className="flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-32 py-4 lg:py-5">
+      <nav className="flex items-center px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-32 py-4 lg:py-5">
         {/* Logo - Left Side */}
-        <div className="flex items-center">
+        <div className="flex items-center flex-shrink-0">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/53b075d93364c4753c543ea7e0ef7e444d50adcc?width=340"
             alt="GHB EMEA Logo"
@@ -17,8 +17,8 @@ const Navbar = () => {
           />
         </div>
           
-        {/* Navigation Links - Center */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        {/* Navigation Links - Center - using flex-1 to push to center */}
+        <div className="hidden lg:flex items-center justify-center flex-1 gap-6 xl:gap-8">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
@@ -57,8 +57,8 @@ const Navbar = () => {
           </button>
         </div>
         
-        {/* Action Buttons - Right Side */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* Action Buttons - Right Side - flex-shrink-0 to keep at right */}
+        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
           <Link to="/muhkam" className="flex h-11 lg:h-12 justify-center items-center gap-2 bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300">
             <img
               src={audaiLogo}
