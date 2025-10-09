@@ -14,43 +14,41 @@ const Navbar = () => {
             alt="GHB EMEA Logo"
             className="w-32 md:w-40 lg:w-44 h-8 md:h-10 lg:h-11 mr-6 lg:mr-8"
           />
+        </div>
           
-          {/* Navigation Links - hidden on medium and smaller screens */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+        {/* Navigation Links - centered and evenly distributed */}
+        <div className="hidden lg:flex items-center justify-center flex-1 gap-1">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Home
           </button>
           <button 
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Services
           </button>
           <button 
             onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Benefits
           </button>
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             About Us
           </button>
           <button 
             onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="flex-1 flex items-center justify-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             Our Team
           </button>
-          </div>
-          
-          {/* Contact Sales button - visible on all screens */}
-          <div className="flex items-center ml-4">
+          <div className="flex items-center">
             <Button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               variant="default"
