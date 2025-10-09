@@ -8,62 +8,58 @@ const Navbar = () => {
   return (
     <div className="w-full">
       <nav className="flex justify-between items-center px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-32 py-4 lg:py-5">
+        {/* Logo - Left Side */}
         <div className="flex items-center">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/53b075d93364c4753c543ea7e0ef7e444d50adcc?width=340"
             alt="GHB EMEA Logo"
-            className="w-32 md:w-40 lg:w-44 h-8 md:h-10 lg:h-11 mr-6 lg:mr-8"
+            className="w-32 md:w-40 lg:w-44 h-8 md:h-10 lg:h-11"
           />
         </div>
           
-        {/* Navigation Links - left aligned and evenly distributed */}
-        <div className="hidden lg:flex items-center flex-1 gap-1">
+        {/* Navigation Links - Center */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
           >
             Home
           </button>
           <button 
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
           >
             Services
           </button>
           <button 
             onClick={() => document.getElementById('benefits')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
           >
             Benefits
           </button>
           <button 
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
           >
             About Us
           </button>
           <button 
             onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex-1 flex items-center text-[#333] text-sm lg:text-base font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
           >
             Our Team
           </button>
-          <div className="flex items-center">
-            <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              variant="default"
-              size="sm"
-              className="flex items-center gap-2 text-sm lg:text-base font-medium whitespace-nowrap bg-[#0A5180] hover:bg-[#084066] text-white"
-            >
-              <Users size={16} />
-              Contact Sales
-            </Button>
-          </div>
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-[#333] text-sm lg:text-base font-medium cursor-pointer hover:text-[#0A5180] transition-colors"
+          >
+            Contact
+          </button>
         </div>
         
-        {/* Action Buttons - Audai and Call positioned at the end */}
+        {/* Action Buttons - Right Side */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link to="/muhkam" className="flex h-11 lg:h-12 justify-center items-center gap-2 bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300 shadow-lg">
+          <Link to="/muhkam" className="flex h-11 lg:h-12 justify-center items-center gap-2 bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300">
             <img
               src={audaiLogo}
               alt="Audai logo"
