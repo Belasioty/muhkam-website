@@ -7,7 +7,7 @@ import audaiLogo from '@/assets/audai-logo-new.png';
 const Navbar = () => {
   return (
     <div className="w-full">
-      <nav className="flex items-center px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-32 py-4 lg:py-5">
+      <nav className="flex min-h-[68px] items-center justify-between px-3 py-2 lg:min-h-0 lg:px-3 lg:py-0">
         {/* Logo - Left Side */}
         <div className="flex items-center flex-shrink-0">
           <img
